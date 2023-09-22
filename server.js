@@ -3,6 +3,7 @@ require('dotenv').config();
 const colors = require('colors');
 const morgan = require('morgan');
 const PORT = process.env.PORT;
+const Students = require('./models/students')
 const methodOverride = require('method-override');
 //Initialization..
 const app = express();
@@ -13,6 +14,9 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 
 //Routes...
+app.get('/students', (req, res) => {
+    res.send(Students);
+})
 
 
 
