@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Students</title>
+</head>
+<header>
+    <h1 class=" text-2xl bg-blue-200 py-3 text-center mx-auto"><span class="text-3xl shadow-lg">Student
+            dataSheet</span>: <%= student.name %>
+    </h1>
+</header>
+<main>
+    <div>
+        The Name: <%= student.name %> <br>
+            Age: <%= student.age %> <br>
+                <% if(student.passed === true ){%>
+                    Student Passed
+                    <%} else {%>
+                        Student need to retake the class.
+                        <%} %>
+    </div>
+</main>
+
+<body>
+
+
+</body>
+
+</html>

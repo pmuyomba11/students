@@ -14,11 +14,17 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 
 //Routes...
+//Index
 app.get('/students', (req, res) => {
     res.send(Students);
 })
 
-
+//Show
+app.get('/students/:id', (req, res) => {
+    res.render('show.ejs', {
+        student: Students[req.params.id]
+    })
+})
 
 //Port Listener.....
 app.listen(PORT, () => {
