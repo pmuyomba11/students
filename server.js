@@ -16,7 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 //Routes...
 //Index
 app.get('/students', (req, res) => {
-    res.send(Students);
+    res.render('index.ejs', {
+        students: Students
+    })
 })
 
 //Show

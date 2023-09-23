@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Students</title>
-</head>
+<%- include('./partials/head.ejs') %>
 <header>
-    <h1 class=" text-2xl bg-blue-200 py-3 text-center mx-auto"><span class="text-3xl shadow-lg">Student
-            dataSheet</span>: <%= student.name %>
+    <h1 class=" text-2xl bg-blue-200 py-3 text-center mx-auto"><span class="text-3xl font-pacifico">Student
+            dataSheet for</span> <%= student.name %>
     </h1>
 </header>
-<main>
+<main class="container flex justify-center text-center mt-5 text-lg bg-gray-200 mx-auto py-1 shadow-lg">
     <div>
         The Name: <%= student.name %> <br>
             Age: <%= student.age %> <br>
-                <% if(student.passed === true ){%>
-                    Student Passed
+             Status:    <% if(student.passed === true ){%>
+                    Student Passed the test!
                     <%} else {%>
                         Student need to retake the class.
                         <%} %>
