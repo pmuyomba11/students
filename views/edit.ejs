@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <h1 class="mx-auto bg-blue-200 text-center py-4 text-3xl font-pacifico">Edit Student</h1>
+        <nav class="container flex flex-col justify-center items-center mt-5 mx-auto  ">
+
+
+            <form class = "bg-gray-200 flex flex-col w-full justify-center items-center"action="/students/<%=index%>?_method=PUT" method="POST">
+            Name: <input class="w-1/2 shadow-lg ml-2 pl-2 rounded py-1" type="text" name="name"
+                value="<%=student.name%>"><br><br>
+            Age: <input class="shadow-lg w-sm pl-2 rounded" type="number" name="age" value="<%=student.age%>"><br><br>
+            Passed: <input type="checkbox" name="passed" <% if(student.passed===true){%>checked<%} %> /><br><br>
+                <input class="bg-red-300 py-2 px-2 hover:text-white mb-4" type="submit" value="Update Student">
+                </form>
+        </nav>
+    </body>
+
+
+</html>

@@ -31,6 +31,28 @@ app.delete('/students/:id', (req, res) => {
     res.redirect('/students')
 })
 
+//Update
+app.put('/students/:id', (req, res) => {
+    if(req.body.passed ==='on'){
+        req.body.passed = true
+    } else {
+        req.body.passed = false
+    }
+    Students[req.params.id] = req.body;
+    res.redirect('/students')
+})
+
+
+//Edit
+app.get('/students/:id/edit', (req, res) => {
+    res.render('edit.ejs', {
+        student :Students[req.params.id],
+        index: req.params.id
+    })
+   
+})
+
+
 //Create..
 app.post('/students', (req, res) => {
    if(req.body.passed === 'on'){
