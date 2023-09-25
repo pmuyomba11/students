@@ -20,7 +20,10 @@ app.get('/students', (req, res) => {
         students: Students
     })
 })
-
+//New..
+app.get('/students/new', (req, res) => {
+    res.render('new.ejs')
+})
 //Show
 app.get('/students/:id', (req, res) => {
     res.render('show.ejs', {
