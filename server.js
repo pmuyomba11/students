@@ -24,6 +24,19 @@ app.get('/students', (req, res) => {
 app.get('/students/new', (req, res) => {
     res.render('new.ejs')
 })
+
+
+//Create..
+app.post('/students', (req, res) => {
+   if(req.body.passed === 'on'){
+    req.body.passed = true
+   } else {
+    req.body. passed = false
+   }
+
+    Students.push(req.body);
+    res.redirect('/students')
+})
 //Show
 app.get('/students/:id', (req, res) => {
     res.render('show.ejs', {
