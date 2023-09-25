@@ -25,6 +25,11 @@ app.get('/students/new', (req, res) => {
     res.render('new.ejs')
 })
 
+//Delete
+app.delete('/students/:id', (req, res) => {
+    Students.splice(req.params.id, 1);
+    res.redirect('/students')
+})
 
 //Create..
 app.post('/students', (req, res) => {

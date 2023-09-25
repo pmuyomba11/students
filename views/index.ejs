@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head.ejs') %>
-<body>
-    <header>
-        <h1 class=" text-2xl bg-blue-200 py-3 text-center mx-auto"><span class="text-3xl font-pacifico">Student
-            results Tracker</span> 
-            <a class="bg-red-300 py-2 px-2 block text-lg shadow-lg" href="/students/new">ADD</a>
-        </h1>
-    </header>
-    <main>
-        <div class="container bg-green-100 mx-auto">
-            <ul class="flex flex-col justify-center text-center py-3 mt-2  leading-9">
-                <% for(let i = 0; i < students.length; i++){%>
-                    <li><a class = "hover:bg-red-300 py-2 px-2"href="/students/<%= i; %>"><%= students[i].name %></a></li>
-                    <%} %>
-            </ul>
-        </div>
-    </main>
-</body>
+
+    <body>
+        <header>
+            <h1 class=" text-2xl bg-blue-200 py-3 text-center mx-auto"><span class="text-3xl font-pacifico">Student
+                    results Tracker</span>
+                <a class="bg-red-300 py-2 px-2 block text-lg shadow-lg hover:text-white" href="/students/new">ADD
+                    STUDENT</a>
+            </h1>
+        </header>
+        <main>
+            <div class="container bg-green-100 mx-auto">
+                <ul class="flex flex-col justify-center items-center py-3 mt-2  leading-9">
+                    <% for(let i=0; i < students.length; i++){%>
+                        <li><a class="hover:bg-red-300 py-2 px-2" href="/students/<%= i; %>">
+                                <%= students[i].name %>
+                            </a>
+                            <form action="/students/<%= i %>?_method=DELETE" method="post">
+                               <input class="underline hover:underline-offset-4 text-red-400 text-sm" type="submit" value="Remove">
+                            </form>
+                        </li>
+                        <%} %>
+                </ul>
+            </div>
+        </main>
+    </body>
+
 </html>
