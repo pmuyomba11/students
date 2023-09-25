@@ -9,9 +9,9 @@
     </header>
     <main>
         <div class="container bg-green-100 mx-auto">
-            <ul class="flex flex-col justify-center text-center py-3 mt-2 leading-9">
+            <ul class="flex flex-col justify-center text-center py-3 mt-2  leading-9">
                 <% for(let i = 0; i < students.length; i++){%>
-                    <li><a href="/students/<%= i; %>"><%= students[i].name %></a></li>
+                    <li><a class = "hover:bg-red-300 py-2 px-2"href="/students/<%= i; %>"><%= students[i].name %></a></li>
                     <%} %>
             </ul>
         </div>
